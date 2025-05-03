@@ -1,6 +1,4 @@
 /* Includes */
-#include "headers/monitor.h"
-#include "headers/window.h"
 #include "headers/game.h"
 
 Window game_window;
@@ -8,7 +6,7 @@ Window game_window;
 int main()
 {
     game_window.display_index  = MONITOR_PRIMARY;
-    game_window.title          = "Spacegame";
+    game_window.title          = "rayengine";
 
     game_window.height         = 450; 
     game_window.width          = 800; 

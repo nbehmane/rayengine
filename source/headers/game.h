@@ -2,9 +2,7 @@
 #define _GAME_H
 
 #include <stdint.h>
-#include "../../raylib/include/raylib.h"
-#include "input.h"
-#include "entity.h"
+#include "rayengine.h"
 
 typedef struct _game_state
 {
