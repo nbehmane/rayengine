@@ -1,5 +1,5 @@
 /* Includes */
-#include "headers/game.h"
+#include "game.h"
 
 Window game_window;
 

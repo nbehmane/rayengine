@@ -1,6 +1,6 @@
 /* Headers */
 #include <stdio.h>
-#include "headers/game.h"
+#include "game.h"
 
 static Game_State state;
 static Input in;

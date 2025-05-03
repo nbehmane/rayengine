@@ -5,4 +5,5 @@
         "game.h": "c",
         "stdio.h": "c"
     },
+    "cmake.sourceDirectory": ["D:/raylib_project/rayengine/source", "D:/raylib_project/rayengine"]
 }
