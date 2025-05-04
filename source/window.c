@@ -1,35 +1,40 @@
-/* Includes */
+/***** Includes *****/
 #include "headers/window.h"
 
-/* Typedefs */
+/***** Typedefs *****/
+typedef struct _window Window;
+
+/***** Structures *****/
 /*
  * @brief Window Structure
  */
-typedef struct _window
-{
-    int width;              // Width of the window to be created.
-    int height;             // Height of the window to be created.
-    int fps;                // FPS for the game.              
-    int display_index;      // Which display the window should be created.
-    const char* title;      // Title of the window to be created.
-    bool is_initialized;    // Whether or not the window is initialized.
-
+struct _window
+{   
+    // Width of the window to be created.
+    int width;
+    // Height of the window to be created.
+    int height;
+    // FPS for the game.
+    int fps;
+    // Which display the window should be created.
+    int display_index;
+    // Title of the window to be created.
+    const char* title;
+    // Whether or not the window is initialized.
+    bool is_initialized;
     // Initialization function BEFORE the window is created. 
     Window_Routine init_routine;
-
     // Game logic before the frame is drawn.
     Window_Routine update_routine;
-
     // The actual draw routine. Ran after the update_routine.
     Window_Routine draw_routine;
-
     // Custom fail status.
     int fail_status;
 
 
-} Window; 
+}; 
 
-/* Static Variables */
+/***** Static Variables *****/
 /*
  * @brief Main Window structure.
  *      Because raylib only allows for a single window context,
@@ -52,8 +57,9 @@ static Window window = {
     .fail_status = -1
 };
 
+/***** Functions *****/
 /*
- * @brief Initializes Window.
+ * ==== window_init ====
  */
 windowstat window_init()
 {
@@ -68,6 +74,9 @@ windowstat window_init()
     return WINDOW_SUCCESS;
 }
 
+/*
+ * ==== window_set_routines ====
+ */
 windowstat window_set_routines( Window_Routine init_routine,
                                 Window_Routine update_routine,
                                 Window_Routine draw_routine)
@@ -89,9 +98,7 @@ windowstat window_set_routines( Window_Routine init_routine,
 }
 
 /*
- * @brief Sets the title of the window. 
- *  
- * @param title   Title of the window.     
+ * ==== window_set_title ====
  */
 windowstat window_set_title(const char *title)
 {
@@ -108,9 +115,7 @@ windowstat window_set_title(const char *title)
 }
 
 /*
- * @brief Sets the FPS of the window. 
- *  
- * @param fps   FPS of the window.     
+ * ==== window_set_fps ====
  */
 windowstat window_set_fps(int fps)
 {
@@ -128,10 +133,7 @@ windowstat window_set_fps(int fps)
 }
 
 /*
- * @brief Sets the dimensions of the window. 
- *  
- * @param width     Width of the window in  pixels.
- * @param height    Height of the window in pixels.
+ * ==== window_set_dimensions ====
  */
 windowstat window_set_dimensions(int width, int height)
 {
@@ -150,7 +152,7 @@ windowstat window_set_dimensions(int width, int height)
 }
 
 /*
- * @brief Starts Window Loop.
+ * ==== window_start ====
  */
 windowstat window_start()
 {
