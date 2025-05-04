@@ -5,7 +5,7 @@
 static Game_State state;
 static Input in;
 
-int game_init(void* arg, int width, int height)
+int game_init(int width, int height)
 {
     /* Setup the default keys. */
     in.up    = KEY_W; 
@@ -21,14 +21,14 @@ int game_init(void* arg, int width, int height)
     return 0;
 }
 
-int game_update(void* arg, int width, int height)
+int game_update(int width, int height)
 {
     game_control(width, height);
 
     return 0;
 }
 
-int game_draw(void* arg, int width, int height)
+int game_draw(int width, int height)
 {
     /* Draw */
     BeginDrawing();

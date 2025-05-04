@@ -1,30 +1,24 @@
 /* Includes */
 #include "game.h"
 
-Window game_window;
+#define WIDTH  800
+#define HEIGHT 450
+#define FPS    30
+#define TITLE  "Game"
 
 int main()
 {
-    game_window.display_index  = MONITOR_PRIMARY;
-    game_window.title          = "rayengine";
+    // All window parameters should be set before initalization.
+    window_set_dimensions(WIDTH, HEIGHT);
+    window_set_fps(FPS);
+    window_set_title(TITLE);
+    window_set_routines(game_init, game_update, game_draw);
 
-    game_window.height         = 450; 
-    game_window.width          = 800; 
+    // Initialize the window.
+    window_init();
 
-    game_window.init_routine   = game_init; 
-    game_window.update_routine = game_update;
-    game_window.draw_routine   = game_draw;
-
-    game_window.init_arg       = NULL; 
-    game_window.update_arg     = NULL; 
-    game_window.draw_arg       = NULL; 
-
-    game_window.fail_status    = 1;
-
-    game_window.fps            = 30;
-
-    window_init(&game_window);
-    window_start(&game_window);
+    // Start the window.
+    window_start();
 
     return 0;
 }
