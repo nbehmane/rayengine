@@ -30,8 +30,6 @@ struct _window
     Window_Routine draw_routine;
     // Custom fail status.
     int fail_status;
-
-
 }; 
 
 /***** Static Variables *****/

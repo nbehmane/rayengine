@@ -4,7 +4,6 @@
 #include <stdint.h>
 #include <stdio.h>
 #include "../source/headers/rayengine.h"
-#include "../raylib/include/raylib.h"
 
 typedef struct _game_state
 {

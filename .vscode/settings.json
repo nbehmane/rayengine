@@ -3,7 +3,8 @@
         "raylib.h": "c",
         "someheader.h": "c",
         "game.h": "c",
-        "stdio.h": "c"
+        "stdio.h": "c",
+        "rayengine.h": "c"
     },
     "cmake.sourceDirectory": ["D:/raylib_project/rayengine/source", "D:/raylib_project/rayengine"]
 }

@@ -31,13 +31,13 @@ int game_update(int width, int height)
 int game_draw(int width, int height)
 {
     /* Draw */
-    BeginDrawing();
+    window_draw_begin();
 
         ClearBackground(RAYWHITE);
 
         DrawCircle(state.x, state.y, 2, RED);
 
-    EndDrawing();
+    window_draw_end();
 
     return 0;
 }

@@ -9,8 +9,7 @@
 /***** Defines *****/
 #define WINDOW_DEFAULT_WIDTH  800
 #define WINDOW_DEFAULT_HEIGHT 450
-
-#define WINDOW_DEFAULT_FPS 30
+#define WINDOW_DEFAULT_FPS    30
 
 /***** Typedefs *****/
 typedef enum _window_status windowstat;
@@ -71,5 +70,25 @@ windowstat window_set_title(const char *title);
 windowstat window_set_routines( Window_Routine init_routine,
                                 Window_Routine update_routine,
                                 Window_Routine draw_routine );
+
+/*
+ * @brief Start drawing to the screen. 
+ *      We inline this because we don't want the calling context 
+ *      of this function. It's meant to be a simple wrapper for API reasons.
+ */
+__forceinline void window_draw_begin()
+{
+    BeginDrawing();
+}
+
+/*
+ * @brief Draw the frame buffer to the screen. 
+ *      We inline this because we don't want the calling context 
+ *      of this function. It's meant to be a simple wrapper for API reasons.
+ */
+__forceinline void window_draw_end()
+{
+    EndDrawing();
+}
 
 #endif // _WINDOW_H
